@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-// 定义函数
+// 检查当前分支 currentBranch 是否包含指定分支 beforeBranch 的提交记录
 def call(String beforeBranch, String currentBranch) {
   def beforeBranchCommitHash = sh(
           script: "git rev-parse origin/${beforeBranch}",
