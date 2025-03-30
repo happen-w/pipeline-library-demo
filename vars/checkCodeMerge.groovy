@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 // 定义函数
-def checkCodeMerge(String beforeBranch, String currentBranch) {
+def call(String beforeBranch, String currentBranch) {
   def beforeBranchCommitHash = sh(
           script: "git rev-parse origin/${beforeBranch}",
           returnStdout: true
