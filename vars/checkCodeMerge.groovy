@@ -8,10 +8,10 @@ def call(String beforeBranch, String currentBranch) {
   ).trim()
   echo "Last commit on ${beforeBranch}: ${beforeBranchCommitHash}"
 
-  def contains = sh(
+  def notContains = sh(
           script: "git merge-base --is-ancestor  ${beforeBranchCommitHash}  origin/${params.CURRENT_BRANCH}",
           returnStatus: true
   )
-  echo "${currentBranch} ${contains ? 'not contains' : 'contains'} ${beforeBranch}"
-  return !contains
+  echo "${currentBranch} ${notContains ? 'not contains' : 'contains'} ${beforeBranch}"
+  return !notContains
 }
