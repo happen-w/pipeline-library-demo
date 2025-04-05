@@ -12,7 +12,6 @@ def call(String beforeBranch, String currentBranch) {
           script: "git merge-base --is-ancestor  ${beforeBranchCommitHash}  origin/${params.CURRENT_BRANCH}",
           returnStatus: true
   )
-  echo "${contains == 0 ? 'true' : 'false'}  ${contains}"
-  echo "${currentBranch} ${contains ? 'contains' : 'not contains'} ${beforeBranch}"
+  echo "${currentBranch} ${contains ? 'not contains' : 'contains'} ${beforeBranch}"
   return contains
 }
