@@ -13,5 +13,5 @@ def call(String beforeBranch, String currentBranch) {
           returnStatus: true
   )
   echo "${currentBranch} ${contains ? 'not contains' : 'contains'} ${beforeBranch}"
-  return contains
+  return !contains
 }
