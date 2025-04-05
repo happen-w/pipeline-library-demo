@@ -6,12 +6,12 @@ def call(String beforeBranch, String currentBranch) {
           script: "git rev-parse origin/${beforeBranch}",
           returnStdout: true
   ).trim()
-  echo "Last commit on ${beforeBranch}: ${beforeBranchCommitHash}"
+  echo "最后一次提交Hash值为 ${beforeBranch}: ${beforeBranchCommitHash}"
 
   def notContains = sh(
           script: "git merge-base --is-ancestor  ${beforeBranchCommitHash}  origin/${params.CURRENT_BRANCH}",
           returnStatus: true
   )
-  echo "${currentBranch} ${notContains ? 'not contains' : 'contains'} ${beforeBranch}"
+  echo "${currentBranch} ${notContains ? '不包含' : '包含'} ${beforeBranch}"
   return !notContains
 }
