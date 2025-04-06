@@ -23,7 +23,7 @@ pid=\$(jps -l | grep "\$jar_name" | awk '{print \$1}')
 
 if [ -z "\$pid" ]; then
     log_message "进程不存在，正在尝试启动..."
-    nohup java \$jvm_options -jar "\$jar_name" > ${logFile} 2>&1 &
+    nohup java \$jvm_options -jar "\$jar_name" > \${logFile} 2>&1 &
 
     # 等待一会儿让进程启动
     sleep 5
@@ -47,7 +47,7 @@ else
         exit 1
     else
         log_message "进程已成功停止，正在重新启动..."
-        nohup java \$jvm_options -jar "\$jar_name" > ${logFile} 2>&1 &
+        nohup java \$jvm_options -jar "\$jar_name" > \${logFile} 2>&1 &
 
         # 等待一会儿让进程启动
         sleep 5
