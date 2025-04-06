@@ -2,7 +2,7 @@
 
 def call(String jar_name, String jvm_options, String logFile, String finishLabel) {
 
-    var template = """
+    return template = """
 #!/bin/sh
 export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
