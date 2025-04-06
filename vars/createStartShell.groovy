@@ -2,7 +2,7 @@
 
 def call(String jar_name, String jvm_options, String logFile, String finishLabel) {
 
-    return template = """
+    def template = """
 #!/bin/sh
 export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
@@ -75,4 +75,5 @@ timeout 100s bash -c "
 exit 0
  """
 
+    return template
 }
