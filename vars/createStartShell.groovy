@@ -8,10 +8,10 @@ export LANG=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
 
 # 要管理的进程名称
-jar_name=${jar_name}
-jvm_options=${jvm_options}
-logFile=${logFile}
-finishLabel=${finishLabel}
+jar_name=\"${jar_name}\"
+jvm_options=\"${jvm_options}\"
+logFile=\"${logFile}\"
+finishLabel=\"${finishLabel}\"
 # 定义日志记录函数
 log_message() {
     local message="\$1"
